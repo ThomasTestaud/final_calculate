@@ -15,7 +15,7 @@ test('has title', async ({ page }) => {
   expect(titleText).toBe("Calculatror");
 });
 
-// All off this doesn't work because there is a space character in the screen
+// All off this doesn't work because there is a space character in the screen div
 test('clicks on 0', async ({ page }) => {
   const button0 = await page.locator("#0")
 
@@ -23,7 +23,7 @@ test('clicks on 0', async ({ page }) => {
 
   const screen = await page.locator(".screen")
   const screenText = await screen.innerText();
-
+  
   expect(screenText).toBe("0");
 });
 
@@ -49,6 +49,7 @@ test('clicks on 2', async ({ page }) => {
   expect(screenText).toBe("2");
 });
 
+// 3 and 5 are inverted
 test('clicks on 3', async ({ page }) => {
   const button3 = await page.locator("#3")
 
@@ -71,6 +72,7 @@ test('clicks on 4', async ({ page }) => {
   expect(screenText).toBe("4");
 });
 
+// 3 and 5 are inverted
 test('clicks on 5', async ({ page }) => {
   const button5 = await page.locator("#5")
 
@@ -126,6 +128,7 @@ test('clicks on 9', async ({ page }) => {
   expect(screenText).toBe("9");
 });
 
+// Doesn't work, it does a substraction instead...
 test('addition', async ({ page }) => {
   const button5 = await page.locator("#5")
   const operatiorsDiv = await page.locator("#operators");
@@ -144,6 +147,7 @@ test('addition', async ({ page }) => {
   expect(screenText).toBe("8");
 });
 
+// Doesn't work, it does a addition instead...
 test('subtraction', async ({ page }) => {
   const button5 = await page.locator("#5")
   const operatorsDiv = await page.locator("#operators");

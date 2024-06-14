@@ -34,6 +34,13 @@ function App() {
     updateOp(undefined);
   }, []);
 
+  const handleTurnRed = useCallback(() => {
+    const btnEqual = document.querySelector('.btnEqual')
+    if(btnEqual){
+      btnEqual.style.color = 'red'
+    }
+  }, []);
+
   const handleNumClick = useCallback((num: number) => {
     let myNum = num
     if(num === 5){
@@ -110,6 +117,14 @@ function App() {
           }}
         >
           C
+        </button>
+        <button
+          className="btnTurnRed"
+          onClick={() => {
+            handleTurnRed();
+          }}
+        >
+          Turn red
         </button>
       </header>
     </div>

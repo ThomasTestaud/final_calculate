@@ -199,6 +199,9 @@ test('Cancel function', async ({ page }) => {
 
 test('change equal btn to red color', async ({ page }) => {
   const buttonEqual = await page.locator(".btnEqual");
+  const btnTurnRed = await page.locator(".btnTurnRed");
+
+  await btnTurnRed.click();
 
   const color = await buttonEqual.evaluate((button) => {
     return button.style.backgroundColor;
@@ -206,3 +209,4 @@ test('change equal btn to red color', async ({ page }) => {
 
   expect(color).toBe("rgb(255, 0, 0)");
 });
+
